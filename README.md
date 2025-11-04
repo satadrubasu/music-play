@@ -2,6 +2,13 @@
 ##
 yt-dlp (actively maintained fork of youtube-dl) is the usual tool for extracting audio. Example command to download and convert to MP3:
 
+### Quick legal note  
+Only proceed if one of these is true:
+you own the video/audio,
+the uploader explicitly granted permission to download/redistribute, or
+the content is licensed for reuse (e.g., Creative Commons) or public-domain.
+If you don’t have permission, use official options like YouTube Music / YouTube Premium, or contact the rights owner.
+At least make sure avoid 
 ## install (mac/linux)
 brew install yt-dlp            # or: pip install -U yt-dlp
 
@@ -17,15 +24,10 @@ yt-dlp -x \
 Flags explained:
 
 -x : extract audio only
-
 --audio-format mp3 : convert to MP3
-
 --audio-quality 0 : best audio quality for conversion
-
 --add-metadata : add video metadata (title/artist/date) into file tags
-
 --embed-thumbnail : embed thumbnail as cover art
-
 -o '%(title)s.%(ext)s' : output filename template
 
 ## Python batch downloader
