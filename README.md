@@ -80,6 +80,19 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+pip install tqdm
+pip install julius
+pip install omegaconf
+pip install diffq
+pip install audioread
+pip install librosa
+pip install six
+pip install onnxruntime
+pip install pydub
+pip install pytorch-lightning
+pip install onnx
+pip install onnx2pytorch
+
 ```
 
 ### Link or copy your existing models
