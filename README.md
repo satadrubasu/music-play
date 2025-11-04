@@ -66,3 +66,57 @@ thumbnail. Output files are saved under `./output`. Use
 `python download_audio.py --help` to see additional options such as selecting a
 different input list, changing the output directory, disabling thumbnails, or
 running in dry-run mode.
+
+
+## Integrating uvr5 
+( make sure pyenv is 3.9.x) 
+
+Given UVR5 is installed in MAC at : /Applications/Ultimate Vocal Remover.app/Contents/  
+```
+cd ~
+git clone https://github.com/Anjok07/ultimatevocalremovergui.git
+cd ultimatevocalremovergui
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+### Link or copy your existing models
+
+Now, in your cloned repo, you’ll see:  
+ultimatevocalremovergui/models/   
+Instead of downloading models again, just symlink or copy the existing model folder from your .app.  
+
+Option B — Replace the whole models/ folder (simple & clean)
+
+If you don’t care about the few models already there or want to share exactly the same model set between GUI and CLI, just replace the entire directory with a symlink:
+```   
+cd ~/ultimatevocalremovergui
+rm -rf ~/ultimatevocalremovergui/models
+ln -s "/Applications/Ultimate Vocal Remover.app/Contents/Resources/models" ./models
+```
+
+## Execute Application CLI : 
+
+```
+python3 separate.py -i "/path/to/song.mp3" -o "/path/to/output"
+```
+
+Specify the model :   
+```
+python3 separate.py -i "/path/to/song.mp3" -o "/path/to/output" -m "UVR-MDX-NET-Voc_FT"
+```
+
+Parameters commonly supported:
+
+Flag	Meaning
+-i	Input file or directory
+-o	Output directory
+-m	Model name (e.g. UVR-MDX-NET-Voc_FT)
+--format	Output format (wav/mp3/flac)
+--gpu	Enable GPU (if available)
+
+Run python3 separate.py -h for all supported flags.
+
+## Integrating the yt-download and this script
+
